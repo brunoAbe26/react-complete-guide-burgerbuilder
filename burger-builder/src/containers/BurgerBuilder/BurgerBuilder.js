@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Aux from '../../hoc/Aux/Aux';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
@@ -99,7 +99,7 @@ class BurgerBuilder extends Component {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice,
             customer: {
-                name: 'Max Schwarzmuller',
+                name: 'Solid Snake',
                 addres: {
                     street: 'Teststreet 1',
                     zipCode: '41351',
@@ -129,6 +129,7 @@ class BurgerBuilder extends Component {
 
         let burger = this.state.error ? <p>Ingredients can't be loaded</p> : <Spinner />;
 
+        console.log(this.state);
         if (this.state.ingredients) {
 
             burger = (
