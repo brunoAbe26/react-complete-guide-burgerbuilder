@@ -29,21 +29,14 @@ class Orders extends React.Component {
     };
 
     render () {
-        let orders = <p>You do not have any order yet :(</p>;
-
-        if (this.state.loading) {
-            orders = <Spinner />
-        }
-
-        if (this.state.orders) {
-            orders = this.state.orders.map(order => (
-                <Order price={order.price} ingredients={order.ingredients} />
-            ));
-        };
-
         return (
             <div>
-                {orders}
+                {this.state.orders.map(order => (
+                    <Order
+                        id={order.id}
+                        ingredients={order.ingredients}
+                        price={order.price} />
+                ))}
             </div>
         );
     }
