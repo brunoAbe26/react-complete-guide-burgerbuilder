@@ -84,15 +84,15 @@ class BurgerBuilder extends Component {
 
 const mapStateToProps = state => {
     let ingredientsArray = null
-    if (state.ingredients)
-        ingredientsArray = Object.keys(state.ingredients)
-            .reduce((sum, ing) => (sum + state.ingredients[ing]), 0);
+    if (state.burgerBuilder.ingredients)
+        ingredientsArray = Object.keys(state.burgerBuilder.ingredients)
+            .reduce((sum, ing) => (sum + state.burgerBuilder.ingredients[ing]), 0);
 
     return {
-        ings: state.ingredients,
-        totalPrice: state.totalPrice,
+        ings: state.burgerBuilder.ingredients,
+        totalPrice: state.burgerBuilder.totalPrice,
         purchaseable: ingredientsArray > 0,
-        error: state.error
+        error: state.burgerBuilder.error
     }
 }
 
